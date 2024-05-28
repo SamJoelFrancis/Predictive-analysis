@@ -1,0 +1,103 @@
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split, cross_val_score
+from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import accuracy_score, mean_squared_error
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Load the dataset
+house = pd.read_csv("D:/multi project/draft.csv")
+
+# View the structure of the dataset
+print(house.info())
+
+# Convert the outcome variable to binary
+house['Gender'] = np.where(house['Gender'] == "Male", 1, 0)
+house['Home.Owner'] = np.where(house['Home.Owner'] == "Yes", 1, 0)
+house['Marital.Status'] = np.where(house['Marital.Status'] == "Married", 1, 0)
+house['Uses.Voice.Service'] = np.where(house['Uses.Voice.Service'] == "Yes", 1, 0)
+
+# Correlation Matrix
+features = ["Age", "Annual.Income", "Gender", "Marital.Status", "Monthly.Billed.Amount", "Uses.Voice.Service"]
+selected_features = house[features]
+cor_matrix = selected_features.corr()
+
+plt.figure(figsize=(10, 8))
+sns.heatmap(cor_matrix, annot=True, cmap='coolwarm', fmt=".2f")
+plt.title("Correlation Matrix")
+plt.show()
+
+# Split the data into training and testing sets
+X = house.drop('Home.Owner', axis=1)
+y = house['Home.Owner']
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=123)
+
+# Fit logistic regression model
+LR_model = LogisticRegression()
+LR_model.fit(X_train, y_train)
+
+# Random Forest
+rf_model = RandomForestClassifier()
+rf_model.fit(X_train, y_train)
+
+# Gradient Boosting Machine
+gbm_model = GradientBoostingClassifier()
+gbm_model.fit(X_train, y_train)
+
+# k-Nearest Neighbors
+knn_model = KNeighborsClassifier(n_neighbors=5)
+knn_model.fit(X_train, y_train)
+
+# Predictions
+predictions_lr = LR_model.predict(X_test)
+predictions_rf = rf_model.predict(X_test)
+predictions_gbm = gbm_model.predict(X_test)
+predictions_knn = knn_model.predict(X_test)
+
+# Calculate accuracy
+accuracy_lr = accuracy_score(y_test, predictions_lr)
+accuracy_rf = accuracy_score(y_test, predictions_rf)
+accuracy_gbm = accuracy_score(y_test, predictions_gbm)
+accuracy_knn = accuracy_score(y_test, predictions_knn)
+
+print("Logistic Regression Accuracy:", accuracy_lr)
+print("Random Forest Accuracy:", accuracy_rf)
+print("Gradient Boosting Accuracy:", accuracy_gbm)
+print("k-Nearest Neighbors Accuracy:", accuracy_knn)
+
+# Mean Squared Error
+mse_lr = mean_squared_error(y_test, predictions_lr)
+mse_rf = mean_squared_error(y_test, predictions_rf)
+mse_gbm = mean_squared_error(y_test, predictions_gbm)
+mse_knn = mean_squared_error(y_test, predictions_knn)
+
+print("Logistic Regression MSE:", mse_lr)
+print("Random Forest MSE:", mse_rf)
+print("Gradient Boosting MSE:", mse_gbm)
+print("k-Nearest Neighbors MSE:", mse_knn)
+
+# Visualize feature selection with LASSO
+from sklearn.linear_model import LassoCV
+lasso = LassoCV(cv=5)
+lasso.fit(X, y)
+
+plt.figure(figsize=(10, 5))
+plt.plot(np.log10(lasso.alphas_), lasso.mse_path_, linestyle='--')
+plt.xlabel('log10(alpha)')
+plt.ylabel('Mean squared error')
+plt.title('LASSO Mean Squared Error')
+plt.show()
+
+# Cross-validation
+from sklearn.model_selection import cross_val_score
+
+lr_cv_scores = cross_val_score(LR_model, X, y, cv=5, scoring='accuracy')
+rf_cv_scores = cross_val_score(rf_model, X, y, cv=5, scoring='accuracy')
+gbm_cv_scores = cross_val_score(gbm_model, X, y, cv=5, scoring='accuracy')
+
+print("Cross-Validation Scores (Logistic Regression):", lr_cv_scores)
+print("Cross-Validation Scores (Random Forest):", rf_cv_scores)
+print("Cross-Validation Scores (Gradient Boosting):", gbm_cv_scores)
