@@ -88,6 +88,5 @@ To assess the generalization ability of the models, 5-fold cross-validation was 
     * mtry = 2: RMSE = 0.3538159, Rsquared = 0.3576365, MAE = 0.2788545 
     * mtry = 4: RMSE = 0.3049234, Rsquared = 0.4615505, MAE = 0.2233804 
     * mtry = 6: RMSE = 0.3030302, Rsquared = 0.4654046, MAE = 0.2216446 
-- **Gradient Boosting Cross-Validation Scores**: [Detailed iteration results are provided in the source file, but a summarized performance is not explicitly printed in the provided R output.] [cite: 285, 286, 287, 288, 289, 290, 291, 292, 293, 294]
-
+- **Gradient Boosting Cross-Validation Scores**: ![image](https://github.com/user-attachments/assets/9fa3d6e4-f353-44a8-ad24-a0795c74a22a)
 
