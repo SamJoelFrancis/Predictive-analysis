@@ -14,12 +14,18 @@ This repository demonstrates the use of predictive modeling techniques applied t
 
 ## 🧪 Tools & Technologies Used
 - Python (Pandas, Scikit-learn, Matplotlib, Seaborn)
-- Jupyter Notebooks
+- R
+-ggplot2
+-RStudio
+-GitHub
 - Excel
 - Power BI
 - SQL
 
-## 📁 Folder Structure
+## Author
+**Sam Joel Francis**  
+📧 samjoelfrancis@gmail.com  
+🔗 [LinkedIn]((https://www.linkedin.com/in/sam-joel-francis-295b3b2a8/))  
 
 
 # Home Owner Prediction Models
