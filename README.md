@@ -25,7 +25,7 @@ This repository demonstrates the use of predictive modeling techniques applied t
 ## Author
 **Sam Joel Francis**  
 📧 samjoelfrancis@gmail.com  
-🔗 [LinkedIn]((https://www.linkedin.com/in/sam-joel-francis-295b3b2a8/))  
+🔗 [LinkedIn][((https://www.linkedin.com/in/sam-joel-francis-295b3b2a8/))  ](https://www.linkedin.com/in/sam-joel-francis-295b3b2a8/)
 
 
 # Home Owner Prediction Models
