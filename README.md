@@ -43,11 +43,7 @@ This project explores various machine learning models to predict home ownership 
 - [Results](#results)
 - [Feature Selection](#feature-selection)
 - [Cross-Validation](#cross-validation)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-
+- [ Power BI DashBoard](# Power BI DashBoard).
 ## Project Overview
 
 The goal of this project is to build and evaluate different classification models to accurately predict whether an individual is a home owner (`Home.Owner`). The project utilizes several popular machine learning algorithms, including Logistic Regression, Random Forest, Gradient Boosting Machines, and k-Nearest Neighbors. We also perform feature selection using LASSO regression and evaluate model robustness using cross-validation.
