@@ -24,7 +24,7 @@ The goal of this project is to build and evaluate different classification model
 
 ## Dataset
 
-The dataset used for this project is `draft.csv`. It contains information about individuals, including their demographics and service usage patterns.
+The dataset used for this project is `Homeowner.csv`. It contains information about individuals, including their demographics and service usage patterns.
 
 ## Features
 
@@ -36,7 +36,8 @@ The dataset includes the following features:
 - `Marital.Status`: Marital status of the individual (converted to binary: 1 for Married, 0 for Not Married).
 - `Monthly.Billed.Amount`: Monthly amount billed to the individual.
 - `Uses.Voice.Service`: Whether the individual uses voice service (converted to binary: 1 for Yes, 0 for No).
-- `Home.Owner`: **Target Variable** - Whether the individual is a home owner (converted to binary: 1 for Yes, 0 for No).
+- `Home.Owner`:
+- **Target Variable** - Whether the individual is a home owner (converted to binary: 1 for Yes, 0 for No).
 
 ## Data Preprocessing
 
