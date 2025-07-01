@@ -1,3 +1,27 @@
+# Predictive Analysis Projects
+
+Welcome to my predictive analytics repository! This repo includes project files, code samples, and model evaluation summaries from my postgraduate coursework at Conestoga College and Humber College.
+
+## 📊 Project Overview
+
+This repository demonstrates the use of predictive modeling techniques applied to real-world datasets. Techniques covered include:
+- Exploratory Data Analysis (EDA)
+- Linear Regression
+- Classification (Logistic Regression, Decision Trees)
+- Clustering (K-Means)
+- Cross-validation
+- Performance evaluation (Accuracy, Confusion Matrix, RMSE)
+
+## 🧪 Tools & Technologies Used
+- Python (Pandas, Scikit-learn, Matplotlib, Seaborn)
+- Jupyter Notebooks
+- Excel
+- Power BI
+- SQL
+
+## 📁 Folder Structure
+
+
 # Home Owner Prediction Models
 
 This project explores various machine learning models to predict home ownership based on demographic and service usage data.
