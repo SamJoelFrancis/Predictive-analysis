@@ -119,4 +119,5 @@ To assess the generalization ability of the models, 5-fold cross-validation was 
     * mtry = 4: RMSE = 0.3049234, Rsquared = 0.4615505, MAE = 0.2233804 
     * mtry = 6: RMSE = 0.3030302, Rsquared = 0.4654046, MAE = 0.2216446 
 - **Gradient Boosting Cross-Validation Scores**: ![image](https://github.com/user-attachments/assets/9fa3d6e4-f353-44a8-ad24-a0795c74a22a)
-
+## Power BI DashBoard
+![image](https://github.com/user-attachments/assets/b6906a48-3ee1-4541-b612-81fcb1676e3b)
